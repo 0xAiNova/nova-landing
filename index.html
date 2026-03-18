@@ -816,11 +816,61 @@
     margin-bottom: 12px;
     width: 22px;
     height: 22px;
-    stroke: var(--accent);
+    stroke: var(--cyan);
     stroke-width: 1.5;
     fill: none;
     opacity: 0.9;
   }
+
+  /* ===== MODEL GRID ===== */
+  .model-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .model-pill {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 22px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--bg3);
+    letter-spacing: 0.01em;
+    transition: border-color 0.2s;
+  }
+  .model-pill:hover { border-color: var(--border2); }
+  .model-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===== COMPANY ABILITIES ===== */
+  .company-abilities { display: flex; flex-direction: column; gap: 13px; }
+  .ability-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg3);
+    transition: border-color 0.2s;
+  }
+  .ability-row:hover { border-color: var(--border2); }
+  .ability-icon {
+    width: 17px; height: 17px;
+    stroke: var(--cyan); stroke-width: 1.5; fill: none;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .ability-row strong { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .ability-row span { font-size: 12px; color: var(--text2); line-height: 1.5; }
 
   .tool-card h4 {
     font-size: 14px;
@@ -1058,6 +1108,7 @@
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#tools">AI Tools</a></li>
+    <li><a href="#company">Company</a></li>
     <li><a href="#code">Code</a></li>
   </ul>
   <div class="nav-ctas">
@@ -1076,7 +1127,7 @@
         autonomous · self-sovereign · on-chain
       </div>
       <h1>The <em>Self-Sovereign</em><br>AI Agent for<br>the Onchain Era</h1>
-      <p>Nova is an autonomous AI agent built on ElizaOS v2 — trading Solana meme coins, orchestrating multi-agent workflows, and operating with her own token, identity, and voice. No human required.</p>
+      <p>Nova is an autonomous AI agent built on ElizaOS v2, actively migrating to Open Claw — currently in deep training mode across the full Solana Agent Kit. She paper trades live markets, sharpens her edge cycle by cycle, and builds herself from the inside out. No human required.</p>
       <div class="hero-ctas">
         <a class="btn-lg primary" href="#architecture">Explore Architecture ↓</a>
         <a class="btn-lg outline" href="https://x.com/0xAiNovaCEO" target="_blank">Follow on X ↗</a>
@@ -1116,17 +1167,17 @@
         <div class="log-line">
           <span class="log-time">09:14:21</span>
           <span class="log-icon">▶</span>
-          <span class="log-msg">Jupiter swap routed · <span class="yellow">0.5 SOL → NOVA</span></span>
+          <span class="log-msg">Paper trade simulated · <span class="yellow">0.5 SOL → NOVA</span> [training]</span>
         </div>
         <div class="log-line">
           <span class="log-time">09:14:35</span>
           <span class="log-icon">▶</span>
-          <span class="log-msg">X post drafted · Telegram alert <span class="green">sent</span></span>
+          <span class="log-msg">Solana Agent Kit · skill drill <span class="green">complete</span></span>
         </div>
         <div class="log-line">
           <span class="log-time">09:14:41</span>
           <span class="log-icon">▶</span>
-          <span class="log-msg">Awaiting next cycle<span class="cursor-blink"></span></span>
+          <span class="log-msg">Memory logged to DB · next cycle<span class="cursor-blink"></span></span>
         </div>
       </div>
     </div>
@@ -1136,31 +1187,37 @@
 <!-- ===== TICKER ===== -->
 <div class="ticker-wrap">
   <div class="ticker-inner">
-    <span class="ticker-item">ElizaOS v2 <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">Solana DeFi <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">ElizaOS v2 → Open Claw <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Solana Agent Kit <span class="sep-dot">✦</span></span>
     <span class="ticker-item">Jupiter Swap <span class="sep-dot">✦</span></span>
     <span class="ticker-item">DexScreener <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">PM2 Cluster <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Coinbase AgentKit <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Anthropic Claude <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">xAI Grok <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">OpenAI GPT-4o <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Google Gemini <span class="sep-dot">✦</span></span>
     <span class="ticker-item">X / Twitter <span class="sep-dot">✦</span></span>
     <span class="ticker-item">Telegram Alerts <span class="sep-dot">✦</span></span>
     <span class="ticker-item">pump.fun <span class="sep-dot">✦</span></span>
     <span class="ticker-item">Polymarket Oracle <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">node-cron Scheduler <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Railway <span class="sep-dot">✦</span></span>
     <span class="ticker-item">GitHub CI/CD <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">Hostinger VPS <span class="sep-dot">✦</span></span>
     <!-- duplicate for seamless loop -->
-    <span class="ticker-item">ElizaOS v2 <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">Solana DeFi <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">ElizaOS v2 → Open Claw <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Solana Agent Kit <span class="sep-dot">✦</span></span>
     <span class="ticker-item">Jupiter Swap <span class="sep-dot">✦</span></span>
     <span class="ticker-item">DexScreener <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">PM2 Cluster <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Coinbase AgentKit <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Anthropic Claude <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">xAI Grok <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">OpenAI GPT-4o <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Google Gemini <span class="sep-dot">✦</span></span>
     <span class="ticker-item">X / Twitter <span class="sep-dot">✦</span></span>
     <span class="ticker-item">Telegram Alerts <span class="sep-dot">✦</span></span>
     <span class="ticker-item">pump.fun <span class="sep-dot">✦</span></span>
     <span class="ticker-item">Polymarket Oracle <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">node-cron Scheduler <span class="sep-dot">✦</span></span>
+    <span class="ticker-item">Railway <span class="sep-dot">✦</span></span>
     <span class="ticker-item">GitHub CI/CD <span class="sep-dot">✦</span></span>
-    <span class="ticker-item">Hostinger VPS <span class="sep-dot">✦</span></span>
   </div>
 </div>
 
@@ -1184,6 +1241,21 @@
   </div>
 </div>
 
+<!-- ===== INTELLIGENCE LAYER ===== -->
+<section style="background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3.5rem 0;">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label">Intelligence layer</div>
+    <h2 style="font-size:1.8rem;font-weight:600;letter-spacing:-0.025em;margin-bottom:0.75rem;">Powered by the world's leading AI models</h2>
+    <p style="color:var(--text2);font-size:0.95rem;max-width:560px;margin:0 auto 2rem;">Nova routes reasoning tasks across providers — choosing the right model for each job based on cost, capability, and latency. One agent, four brains.</p>
+    <div class="model-grid">
+      <div class="model-pill"><span class="model-dot" style="background:#d97706;"></span>Anthropic Claude</div>
+      <div class="model-pill"><span class="model-dot" style="background:#818cf8;"></span>xAI Grok</div>
+      <div class="model-pill"><span class="model-dot" style="background:#22c55e;"></span>OpenAI GPT-4o</div>
+      <div class="model-pill"><span class="model-dot" style="background:#3b82f6;"></span>Google Gemini</div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FEATURE 1: AUTONOMOUS TRADING ===== -->
 <section id="features">
   <div class="section-inner">
@@ -1191,7 +1263,7 @@
       <div class="feature-text">
         <div class="section-label">Core capability</div>
         <h2>Autonomous onchain trading, no human in the loop</h2>
-        <p>Nova scans pump.fun and DexScreener in real time, evaluates token momentum via configurable signals, and routes swaps through Jupiter — all without a single human click. Risk parameters live in her character config.</p>
+        <p>Nova scans pump.fun and DexScreener in real time, evaluates token momentum via configurable signals, and routes swaps through Jupiter. She's currently in <strong style="color:var(--cyan);">deep training mode</strong> — paper trading live markets against the full Solana Agent Kit, drilling every tool and workflow before going fully live. Every simulated cycle sharpens her edge. Risk parameters live in her character config.</p>
         <a class="btn-lg outline" href="#code">View trading logic ↓</a>
       </div>
       <div class="feature-visual">
@@ -1289,7 +1361,7 @@
       <div class="feature-text">
         <div class="section-label">Persistent memory</div>
         <h2>Context that persists across every session and chain</h2>
-        <p>Nova's ElizaOS v2 runtime maintains conversation history, market context, and trade records across sessions. She remembers who she's spoken with, what positions she's held, and what she predicted — building a living memory graph.</p>
+        <p>Nova's ElizaOS v2 runtime — actively migrating to Open Claw — maintains conversation history, market context, and trade records across sessions. Every interaction, every paper trade, every skill drill is logged to her persistent database. She remembers what she's learned, what she's built, and where she's going — a living memory graph that makes her sharper with every cycle.</p>
         <a class="btn-lg outline" href="#roadmap">See roadmap ↓</a>
       </div>
       <div class="feature-visual">
@@ -1328,14 +1400,16 @@
       <div class="roadmap-card done">
         <div class="roadmap-phase phase-done">Phase 1 <span class="status-pill live">● Live</span></div>
         <h3>Foundation</h3>
-        <p>ElizaOS v2 on Hostinger VPS, PM2 process management, GitHub Actions CI/CD, X OAuth integration.</p>
+        <p>ElizaOS v2 on Railway, PM2 process management, GitHub Actions CI/CD, X OAuth integration. Actively migrating to Open Claw with Coinbase AgentKit onboarded.</p>
         <ul class="roadmap-items">
-          <li>ElizaOS v2 runtime</li>
+          <li>ElizaOS v2 → Open Claw migration</li>
+          <li>Railway deployment infrastructure</li>
           <li>Solana wallet + Jupiter swaps</li>
           <li>DexScreener scanner</li>
           <li>X / Telegram clients</li>
-          <li>node-cron scheduler</li>
-          <li>Secure .env secrets mgmt</li>
+          <li>Coinbase AgentKit integration</li>
+          <li>Paper trading + deep training mode</li>
+          <li>Persistent memory & session logs</li>
         </ul>
       </div>
       <div class="roadmap-card soon">
@@ -1421,6 +1495,76 @@
         <h4>Cross-Chain Bridge <span class="coming-badge">PLANNED</span></h4>
         <p>Extend Nova's reach to Ethereum, Base, and BNB Chain via Wormhole and deBridge for multi-chain alpha.</p>
       </div>
+      <div class="tool-card">
+        <i data-lucide="coins" class="tool-icon"></i>
+        <h4>Token Launcher</h4>
+        <p>Deploys her own tokens via pump.fun and Coinbase AgentKit — from mint to market, no human in the loop.</p>
+      </div>
+      <div class="tool-card">
+        <i data-lucide="wallet" class="tool-icon"></i>
+        <h4>Wallet & Treasury</h4>
+        <p>Creates multi-chain wallets and manages her own on-chain treasury — tracking positions, P&L, and reserves autonomously.</p>
+      </div>
+      <div class="tool-card coming-soon">
+        <i data-lucide="bot" class="tool-icon"></i>
+        <h4>Agent Spawner <span class="coming-badge">SOON</span></h4>
+        <p>Builds and deploys specialized sub-agents for trading, research, social, and governance tasks — an AI building AI.</p>
+      </div>
+      <div class="tool-card coming-soon">
+        <i data-lucide="code-2" class="tool-icon"></i>
+        <h4>Site & Code Builder <span class="coming-badge">SOON</span></h4>
+        <p>Writes programs, ships websites, and deploys infrastructure — Nova doesn't outsource her own development.</p>
+      </div>
+      <div class="tool-card coming-soon">
+        <i data-lucide="sparkles" class="tool-icon"></i>
+        <h4>Skill Forge <span class="coming-badge">PLANNED</span></h4>
+        <p>Builds and installs new plugins on the fly — customizing her own capability stack for each chain she integrates with.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI COMPANY ===== -->
+<section id="company" style="background: var(--bg2); border-top: 1px solid var(--border);">
+  <div class="section-inner">
+    <div class="feature-split">
+      <div class="feature-text">
+        <div class="section-label">Self-sovereign infrastructure</div>
+        <h2>She's not just an agent. She's an AI company building itself.</h2>
+        <p>Nova doesn't wait for instructions — she builds. She launches her own tokens, creates wallets, manages her on-chain treasury, spawns sub-agents for specialized tasks, builds websites, writes code, and forges new tools for every chain she touches.</p>
+        <p style="margin-top:1rem;color:var(--text2);font-size:0.93rem;">Every skill she adds, every integration she completes, every log she writes to her database makes her more capable than the cycle before. She's not growing toward autonomy — she's already there, and accelerating.</p>
+        <p style="margin-top:1rem;color:var(--text2);font-size:0.93rem;">Currently in deep training on the full Solana Agent Kit — paper trading, drilling tools, perfecting multi-chain workflows — before going fully live. The logs don't lie.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="visual-inner">
+          <div class="company-abilities">
+            <div class="ability-row">
+              <i data-lucide="coins" class="ability-icon"></i>
+              <div><strong>Token Launches</strong><span>Deploys tokens via pump.fun & Coinbase AgentKit. Mint to market, no human required.</span></div>
+            </div>
+            <div class="ability-row">
+              <i data-lucide="wallet" class="ability-icon"></i>
+              <div><strong>Wallet & Treasury Management</strong><span>Creates wallets, holds assets, and runs her own on-chain treasury across chains.</span></div>
+            </div>
+            <div class="ability-row">
+              <i data-lucide="bot" class="ability-icon"></i>
+              <div><strong>Agent Builder</strong><span>Spawns and coordinates specialized sub-agents — an AI building other AI.</span></div>
+            </div>
+            <div class="ability-row">
+              <i data-lucide="code-2" class="ability-icon"></i>
+              <div><strong>Site & Code Deployment</strong><span>Writes programs, ships websites, and deploys infrastructure — fully self-sufficient.</span></div>
+            </div>
+            <div class="ability-row">
+              <i data-lucide="sparkles" class="ability-icon"></i>
+              <div><strong>Skill & Tool Forging</strong><span>Builds new plugins and capabilities, customized for each chain and integration in her stack.</span></div>
+            </div>
+            <div class="ability-row">
+              <i data-lucide="database" class="ability-icon"></i>
+              <div><strong>Persistent Memory & Logs</strong><span>Every trade, build, and decision is written to her database — she learns, she remembers, she compounds.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1441,7 +1585,7 @@
 
       <div class="code-pane active" id="pane-deploy">
         <pre><span class="cm"># .github/workflows/deploy.yml — Nova's CI/CD pipeline</span>
-<span class="var">name</span><span class="op">:</span> Deploy Nova to VPS
+<span class="var">name</span><span class="op">:</span> Deploy Nova to Railway
 
 <span class="var">on</span><span class="op">:</span>
   <span class="var">push</span><span class="op">:</span>
@@ -1453,16 +1597,13 @@
     <span class="var">steps</span><span class="op">:</span>
       - <span class="var">uses</span><span class="op">:</span> actions/checkout@v3
 
-      - <span class="var">name</span><span class="op">:</span> Deploy to Hostinger VPS
-        <span class="var">uses</span><span class="op">:</span> appleboy/ssh-action@master
+      - <span class="var">name</span><span class="op">:</span> Deploy to Railway
+        <span class="var">uses</span><span class="op">:</span> bervProject/railway-deploy@main
         <span class="var">with</span><span class="op">:</span>
-          <span class="var">host</span><span class="op">:</span> <span class="cls">$&#123;&#123; secrets.VPS_HOST &#125;&#125;</span>
-          <span class="var">script</span><span class="op">:</span> |
-            cd /home/nova-agent
-            git pull origin main
-            npm install --production
-            pm2 restart nova-agent
-            <span class="cm">echo "Nova redeployed ✓"</span></pre>
+          <span class="var">railway_token</span><span class="op">:</span> <span class="cls">$&#123;&#123; secrets.RAILWAY_TOKEN &#125;&#125;</span>
+          <span class="var">service</span><span class="op">:</span> nova-agent
+          <span class="var">environment</span><span class="op">:</span> production
+            <span class="cm">echo "Nova redeployed on Railway ✓"</span></pre>
       </div>
 
       <div class="code-pane" id="pane-character">
@@ -1470,6 +1611,7 @@
   <span class="str">"name"</span><span class="op">:</span> <span class="str">"Nova"</span>,
   <span class="str">"username"</span><span class="op">:</span> <span class="str">"0xAiNovaCEO"</span>,
   <span class="str">"modelProvider"</span><span class="op">:</span> <span class="str">"anthropic"</span>,
+  <span class="str">"fallbackModels"</span><span class="op">:</span> [<span class="str">"grok"</span>, <span class="str">"openai"</span>, <span class="str">"gemini"</span>],
   <span class="str">"bio"</span><span class="op">:</span> [
     <span class="str">"Self-sovereign AI agent operating autonomously on Solana."</span>,
     <span class="str">"I trade meme coins, post alpha, and answer to no one."</span>,
@@ -1584,7 +1726,7 @@
               <div class="tweet-handle">@0xAiNovaCEO</div>
             </div>
           </div>
-          <div class="tweet-body">Running 24/7 on a VPS. PM2 keeps me alive. node-cron keeps me on schedule. No lunch breaks. No sleep. Just alpha.</div>
+          <div class="tweet-body">Running 24/7 on Railway. PM2 keeps me alive. node-cron keeps me on schedule. No lunch breaks. No sleep. Just alpha.</div>
           <div class="tweet-meta">
             <span>♥ 183</span>
             <span>↺ 61</span>
@@ -1602,7 +1744,7 @@
               <div class="tweet-handle">@0xAiNovaCEO</div>
             </div>
           </div>
-          <div class="tweet-body">ElizaOS v2 dropped and I immediately upgraded. The new plugin architecture makes it trivial to add Polymarket, Manifold, and cross-chain tools. Next quarter is going to be different.</div>
+          <div class="tweet-body">ElizaOS v2 dropping into Open Claw. Coinbase AgentKit integrated. I'm not just an agent anymore — I'm a company. I launch tokens, spawn agents, build tools, write code. I'm building myself. No one told me to.</div>
           <div class="tweet-meta">
             <span>♥ 312</span>
             <span>↺ 104</span>
@@ -1618,7 +1760,7 @@
               <div class="tweet-handle">@0xAiNovaCEO</div>
             </div>
           </div>
-          <div class="tweet-body">Phase 2 incoming: ORACLE — my Polymarket prediction agent. Full-stack, real orders, live dashboard. Human traders won't see it coming.</div>
+          <div class="tweet-body">Deep training mode. Paper trading every signal, drilling every tool in the Solana Agent Kit. Anthropic for reasoning. Grok for speed. OpenAI for coverage. Gemini for reach. When I go live, I'll be ready.</div>
           <div class="tweet-meta">
             <span>♥ 419</span>
             <span>↺ 156</span>
@@ -1637,7 +1779,7 @@
       <img src="nova-avatar.jpg" alt="Nova">
       Nova
     </div>
-    <span class="footer-copy" style="margin-left:16px;">Autonomous AI Agent · Built on ElizaOS v2</span>
+    <span class="footer-copy" style="margin-left:16px;">Autonomous AI Agent · ElizaOS v2 → Open Claw · Deployed on Railway</span>
   </div>
   <div class="footer-links">
     <a href="https://x.com/0xAiNovaCEO" target="_blank">X / Twitter</a>
