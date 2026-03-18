@@ -812,9 +812,14 @@
   }
 
   .tool-icon {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
     display: block;
+    margin-bottom: 12px;
+    width: 22px;
+    height: 22px;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    fill: none;
+    opacity: 0.9;
   }
 
   .tool-card h4 {
@@ -1372,47 +1377,47 @@
 
     <div class="tools-grid">
       <div class="tool-card">
-        <span class="tool-icon">⚡</span>
+        <i data-lucide="shuffle" class="tool-icon"></i>
         <h4>Jupiter Swap</h4>
         <p>Route-optimized token swaps across Solana DEXes. Nova executes trades at best available price with slippage controls.</p>
       </div>
       <div class="tool-card">
-        <span class="tool-icon">📡</span>
+        <i data-lucide="activity" class="tool-icon"></i>
         <h4>DexScreener Feed</h4>
         <p>Real-time pool scanning for volume spikes, new launches, and promotion detection. Nova's eyes on the market.</p>
       </div>
       <div class="tool-card">
-        <span class="tool-icon">🐦</span>
+        <i data-lucide="send" class="tool-icon"></i>
         <h4>X / Twitter Agent</h4>
         <p>OAuth 1.0a integration for autonomous posting, thread creation, and mention replies on her own schedule.</p>
       </div>
       <div class="tool-card">
-        <span class="tool-icon">📬</span>
+        <i data-lucide="bell-ring" class="tool-icon"></i>
         <h4>Telegram Alerts</h4>
         <p>Instant trade alerts, market commentary, and status pings pushed to her Telegram community in real time.</p>
       </div>
       <div class="tool-card coming-soon">
-        <span class="tool-icon">🎯</span>
+        <i data-lucide="crosshair" class="tool-icon"></i>
         <h4>ORACLE Dashboard <span class="coming-badge">SOON</span></h4>
         <p>Full-stack Polymarket prediction trading — React UI, Node.js backend, WebSocket feeds, and real order execution.</p>
       </div>
       <div class="tool-card coming-soon">
-        <span class="tool-icon">🧠</span>
+        <i data-lucide="network" class="tool-icon"></i>
         <h4>RAG Memory Graph <span class="coming-badge">SOON</span></h4>
         <p>Long-term market memory with retrieval-augmented generation. Nova recalls past trades, calls, and on-chain events.</p>
       </div>
       <div class="tool-card coming-soon">
-        <span class="tool-icon">🗳️</span>
+        <i data-lucide="scale" class="tool-icon"></i>
         <h4>DAO Voting Agent <span class="coming-badge">PLANNED</span></h4>
         <p>Nova analyzes proposals and casts $NOVA-weighted votes autonomously based on her governance character config.</p>
       </div>
       <div class="tool-card coming-soon">
-        <span class="tool-icon">🖼️</span>
+        <i data-lucide="gem" class="tool-icon"></i>
         <h4>NFT Mint Engine <span class="coming-badge">PLANNED</span></h4>
         <p>AI-generated NFT collections deployed on Metaplex. Nova designs, mints, and lists without human input.</p>
       </div>
       <div class="tool-card coming-soon">
-        <span class="tool-icon">🔗</span>
+        <i data-lucide="infinity" class="tool-icon"></i>
         <h4>Cross-Chain Bridge <span class="coming-badge">PLANNED</span></h4>
         <p>Extend Nova's reach to Ethereum, Base, and BNB Chain via Wormhole and deBridge for multi-chain alpha.</p>
       </div>
@@ -1681,5 +1686,7 @@
     observer.observe(el);
   });
 </script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
 </body>
 </html>
